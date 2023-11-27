@@ -41,23 +41,17 @@ Additionally, the SOC utilized the following tools, components and regulations:
 - Windows Event Viewer
 - Kusto Query Language (KQL)
 
-To collect the metrics for the insecure environment, all resources were originally deployed, exposed to the  public internet. The Virtual Machines had their Network Security Groups open (allowing all traffic) and built-in firewalls disabled. All other resources were deployed with endpoints visible to the public Internet.
-
-### Implementing Security Controls
-
-To collect the metrics for the secured environment, Network Security Groups were hardened by blocking ALL traffic (with the exception of my workstation), and built-in firewalls enabled. Azure Key Vault and Storage Container were protected by disabling access to public endpoints and replacing them with rivate endpoints.
-
 ## Attack Maps Before Hardening / Security Controls
 
 For the "BEFORE" metrics, all resources were originally deployed, and exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
 
-![Linux SSH Auth Failure (Before)](4)
+![Linux SSH Auth Failure (Before)](https://github.com/Nick-Errington/Cloud-SOC-Honeynet/blob/main/Attack-Maps/linux-ssh-auth-fail-before.PNG)
 
-![MySQL Authentication Failures(Before)](5)
+![MySQL Authentication Failures (Before)](https://github.com/Nick-Errington/Cloud-SOC-Honeynet/blob/main/Attack-Maps/mssql-auth-fail-before.PNG)
 
-![nsg-malicious-allowed-in (before)](6)
+![nsg-malicious-allowed-in (Before)](https://github.com/Nick-Errington/Cloud-SOC-Honeynet/blob/main/Attack-Maps/nsg-malicious-allowed-in-before.PNG)
 
-![Windows RDP   SMB Authentication Failure(Before)](7)
+![Windows RDP   SMB Authentication Failure (Before)](https://github.com/Nick-Errington/Cloud-SOC-Honeynet/blob/main/Attack-Maps/windows-rdp-auth-fail-before.PNG)
 
 
 ## Metrics Before Hardening / Security Controls
