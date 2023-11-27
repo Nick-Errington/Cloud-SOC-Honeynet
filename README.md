@@ -2,7 +2,7 @@
 
 # Building a SOC + Honeynet in Microsoft Azure (Live Traffic) Comprehensive Summary
 
-![68747470733a2f2f692e696d6775722e636f6d2f5a5778653033652e6a7067](1)
+![68747470733a2f2f692e696d6775722e636f6d2f5a5778653033652e6a7067](https://github.com/Nick-Errington/Cloud-SOC-Honeynet/blob/main/Achitecture-Topology/topology-diagram.jpg)
 
 
 ## Introduction
