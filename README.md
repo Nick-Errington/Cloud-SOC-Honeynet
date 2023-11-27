@@ -21,15 +21,31 @@ In this project, I build a mini honeynet in Azure and ingest log sources from va
 ## Architecture After Hardening / Security Controls
 ![Architecture Diagram](https://github.com/Nick-Errington/Cloud-SOC-Honeynet/blob/main/Achitecture-Topology/architecture-after.jfif)
 
-The architecture of the mini honeynet in Azure consists of the following components:
+The architecture of the mini honeynet in Azure consists of the following tools and components:
 
 - Virtual Network (VNet)
 - Network Security Group (NSG)
 - Virtual Machines (2 Windows, 1 Linux)
-- Log Analytics Workspace
 - Azure Key Vault
 - Azure Storage Account
-- Microsoft Sentinel
+- Microsoft SQL Server
+- SQL Server Management Studio (SSMS)
+- Azure Active Directory
+- PowerShell
+
+Additionally, the SOC utilized the following tools, components and regulations: 
+- Microsoft Sentinel (SIEM)
+- Microsoft Defender for Cloud (MDC)
+  - [NIST SP 800-53 Revision 4](https://csrc.nist.gov/publications/detail/sp/800-53/rev-4/archive/2015-01-22)
+- Log Analytics Workspace
+- Windows Event Viewer
+- Kusto Query Language (KQL)
+
+To collect the metrics for the insecure environment, all resources were originally deployed, exposed to the  public internet. The Virtual Machines had their Network Security Groups open (allowing all traffic) and built-in firewalls disabled. All other resources were deployed with endpoints visible to the public Internet.
+
+### Implementing Security Controls
+
+To collect the metrics for the secured environment, Network Security Groups were hardened by blocking ALL traffic (with the exception of my workstation), and built-in firewalls enabled. Azure Key Vault and Storage Container were protected by disabling access to public endpoints and replacing them with rivate endpoints.
 
 ## Attack Maps Before Hardening / Security Controls
 
