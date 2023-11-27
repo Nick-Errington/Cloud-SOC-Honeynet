@@ -45,34 +45,45 @@ Additionally, the SOC utilized the following tools, components and regulations:
 
 For the "BEFORE" metrics, all resources were originally deployed, and exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
 
+### Linux SSH Authentication Failures:
 ![Linux SSH Auth Failure (Before)](https://github.com/Nick-Errington/Cloud-SOC-Honeynet/blob/main/Attack-Maps/linux-ssh-auth-fail-before.PNG)
+<br />
 
+### MS SQL Server Authentication Failures:
 ![MySQL Authentication Failures (Before)](https://github.com/Nick-Errington/Cloud-SOC-Honeynet/blob/main/Attack-Maps/mssql-auth-fail-before.PNG)
+<br />
 
+### NSG Allowed Malicious Inbound Flows:
 ![nsg-malicious-allowed-in (Before)](https://github.com/Nick-Errington/Cloud-SOC-Honeynet/blob/main/Attack-Maps/nsg-malicious-allowed-in-before.PNG)
+<br />
 
+### Windows RDP/SMB Authentication Failures:
 ![Windows RDP   SMB Authentication Failure (Before)](https://github.com/Nick-Errington/Cloud-SOC-Honeynet/blob/main/Attack-Maps/windows-rdp-auth-fail-before.PNG)
+<br />
 
+## After Hardening Measures and Security Controls
 
+In the "AFTER" stage, based off the incidents created from the "Before" 24 hour capture, I implemented hardening measures and security controls to improve the environment's security from attackers.<br /> 
+These improvements included:
+
+- <b>Network Security Groups (NSGs)</b>: I hardened the NSGs by only allowing my own public IP address to come thrugh otherwise all other traffic would be blocked by the new parameteres created.
+
+- <b>Built-in Firewalls</b>: In my virtual machines I configured the built-in firewalls so that it would deny access from unauthorized users. 
+
+- <b>Private Endpoints</b>: For other Azure resources, I replaced the public endpoints with Private Endpoints. This ensured that access to sensitive resources, such as storage accounts and databases, was limited to only the virtual network.
+
+## Attack Maps After Hardening / Security Controls
+
+<br />
+
+```All map queries actually returned no results due to no instances of malicious activity for the 24 hour period after hardening.```
+
+ <br />
+ 
 ## Metrics Before Hardening / Security Controls
 
-For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic except for my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
-
-
-![Windows RDP   SMB Authentication Failure](8)
-
-![Linux SSH Auth Failure](9)
-
-![MySQL Authentication Failures](10)
-
-![nsg-malicious-allowed-in](11)
-
-```All map queries returned no results due to no instances of malicious activity for the 24-hour period after hardening.```
-
-The following table shows the metrics we measured in our insecure environment for 24 hours:
-
-Start Time 2023-011-19 18:17
-
+The following table shows the metrics we measured in our insecure environment for 24 hours:<br/>
+Start Time 2023-011-19 18:17<br/>
 Stop Time	2023-11-20 18:17
 <div>
 
@@ -87,10 +98,8 @@ Stop Time	2023-11-20 18:17
 
 ## Metrics After Hardening / Security Controls
 
-The following table shows the metrics we measured in our environment for another 24 hours, but after we applied security controls:
-
-Start Time 2023-11-22 19:20
-
+The following table shows the metrics we measured in our environment for another 24 hours, but after we applied security controls:<br/>
+Start Time 2023-11-22 19:20<br/>
 Stop Time	2023-11-23 19:20
 
 | Metric                   | Count | Change post-hardening
