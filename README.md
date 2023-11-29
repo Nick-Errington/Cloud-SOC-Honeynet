@@ -89,11 +89,11 @@ Stop Time	2023-11-20 18:17
 
 | Metric                   | Count
 | ------------------------ | -----
-| SecurityEvent            | 19778
-| Syslog                   | 7748
-| SecurityAlert            | 7
-| SecurityIncident         | 322
-| AzureNetworkAnalytics_CL | 3236
+| Security Events (Windows VMs)| 19778
+| Syslog (Linux VMs)           | 7748
+| SecurityAlert (Microsoft Defender for Cloud)| 7
+| Security Incident (Sentinel Incidents)| 322
+| NSG Inbound Malicious Flows Allowed| 3236
 
 
 ## Metrics After Hardening / Security Controls
@@ -104,11 +104,11 @@ Stop Time	2023-11-23 19:20
 
 | Metric                   | Count | Change post-hardening
 | ------------------------ | ----- | --------------------- 
-| SecurityEvent            | 0 | 100%
-| Syslog                   | 0 | 100%
-| SecurityAlert            | 0 | 100%
-| SecurityIncident         | 0 | 100%
-| AzureNetworkAnalytics_CL | 0 | 100%
+| Security Events (Windows VMs)| 9367 | 52.64%
+| Syslog (Linux VMs)       | 1 | 99.99%
+| SecurityAlert (Microsoft Defender for Cloud)| 0 | 100%
+| Security Incident (Sentinel Incidents)| 0 | 100%
+| NSG Inbound Malicious Flows Allowed| 0 | 100%
 
 ## Conclusion
 
